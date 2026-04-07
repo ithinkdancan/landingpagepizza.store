@@ -1,19 +1,10 @@
 /* Overlay */
-.overlayWrapper {
-  position: relative;
-}
-
 .overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 200;
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  background: rgba(255, 255, 255, 0.3);
-  pointer-events: auto;
+  background: #fff;
+  min-height: 400px;
 }
 
 .overlayLabel {
