@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `South Flo Pizza | H-E-B`,
+    description: `Order fresh pizza for delivery or curbside pickup from South Flo Pizza at H-E-B.`,
+    author: `@habornetech`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
