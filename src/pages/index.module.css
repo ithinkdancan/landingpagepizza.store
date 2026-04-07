@@ -90,11 +90,17 @@
 /* Category cards */
 .categoryGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+@media (min-width: 600px) {
+  .categoryGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
 .categoryCard {
