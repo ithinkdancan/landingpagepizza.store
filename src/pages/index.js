@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import * as styles from "./index.module.css"
 
-const PIZZA_URL = "https://retail.staging.heb.com/pizza"
+const PIZZA_URL = "https://retail.staging.heb.com/pizza?setPreview=9868"
 
 const CATEGORIES = [
   {
@@ -84,7 +84,7 @@ const FEATURED_ITEMS = [
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="South Flo Pizza" />
+    <SEO title="Lone Star Slice" />
 
     {/* Hero */}
     <section
@@ -188,7 +188,7 @@ const IndexPage = () => (
           Order online for delivery or curbside pickup.
         </p>
         <a href={PIZZA_URL} className={styles.footerCtaButton}>
-          Order from H&#8209;E&#8209;B
+          Order from Lone Star Slice
         </a>
       </section>
     </div>

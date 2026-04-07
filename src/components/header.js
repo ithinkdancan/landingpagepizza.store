@@ -4,7 +4,7 @@ import React from "react"
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `#cc0000`,
+      background: `#000`,
       marginBottom: 0,
       position: `sticky`,
       top: 0,
@@ -23,7 +23,7 @@ const Header = ({ siteTitle }) => (
       }}
     >
       <a
-        href="https://retail.staging.heb.com/pizza"
+        href="https://retail.staging.heb.com/pizza?setPreview=9868"
         style={{
           color: `white`,
           textDecoration: `none`,
@@ -36,10 +36,10 @@ const Header = ({ siteTitle }) => (
         {siteTitle}
       </a>
       <a
-        href="https://retail.staging.heb.com/pizza"
+        href="https://retail.staging.heb.com/pizza?setPreview=9868"
         style={{
           background: `white`,
-          color: `#cc0000`,
+          color: `#000`,
           padding: `0.5rem 1.25rem`,
           borderRadius: `24px`,
           textDecoration: `none`,

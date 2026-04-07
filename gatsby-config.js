@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `South Flo Pizza | H-E-B`,
-    description: `Order fresh pizza for delivery or curbside pickup from South Flo Pizza at H-E-B.`,
+    title: `Lone Star Slice`,
+    description: `Order fresh pizza for delivery or curbside pickup from Lone Star Slice at H-E-B.`,
     author: `@habornetech`,
   },
   plugins: [
