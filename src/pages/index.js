@@ -1,21 +1,197 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import * as styles from "./index.module.css"
+
+const PIZZA_URL = "https://retail.staging.heb.com/pizza"
+
+const CATEGORIES = [
+  {
+    title: "Pizzas",
+    bg: "bgCreamsicle",
+    image:
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=400&fit=crop&q=80",
+  },
+  {
+    title: "Wings",
+    bg: "bgCottonCandy",
+    image:
+      "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=400&h=400&fit=crop&q=80",
+  },
+  {
+    title: "Sides",
+    bg: "bgPistachio",
+    image:
+      "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop&q=80",
+  },
+  {
+    title: "Drinks",
+    bg: "bgFadedJeans",
+    image:
+      "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&h=400&fit=crop&q=80",
+  },
+  {
+    title: "Desserts",
+    bg: "bgLavender",
+    image:
+      "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=400&h=400&fit=crop&q=80",
+  },
+]
+
+const FEATURED_ITEMS = [
+  {
+    id: 1,
+    name: "Pepperoni Lover's",
+    description: "Loaded with pepperoni on every slice",
+    price: 14.99,
+    image:
+      "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&q=80",
+  },
+  {
+    id: 2,
+    name: "BBQ Chicken",
+    description: "Smoky BBQ sauce, grilled chicken, red onion",
+    price: 15.99,
+    image:
+      "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80",
+  },
+  {
+    id: 3,
+    name: "Margherita",
+    description: "Fresh mozzarella, tomato, basil",
+    price: 13.99,
+    image:
+      "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=80",
+  },
+  {
+    id: 4,
+    name: "Meat Supreme",
+    description: "Sausage, pepperoni, bacon & ham",
+    price: 16.99,
+    image:
+      "https://images.unsplash.com/photo-1555072956-7758afb20e8f?w=400&q=80",
+  },
+  {
+    id: 5,
+    name: "Veggie Garden",
+    description: "Bell peppers, mushrooms, olives & more",
+    price: 13.49,
+    image:
+      "https://images.unsplash.com/photo-1506354666786-959d6d497f1a?w=400&q=80",
+  },
+]
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site running on App Platform!</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+    <SEO title="South Flo Pizza" />
+
+    {/* Hero */}
+    <section
+      className={styles.hero}
+      style={{
+        backgroundImage: `url("https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1376&h=400&fit=crop&q=80")`,
+      }}
+    >
+      <div className={styles.heroContent}>
+        <h1 className={styles.heroHeading}>
+          Fresh&#8209;baked pizza,&nbsp;your way
+        </h1>
+        <p className={styles.heroSubheading}>
+          Delivery or carryout — ready when you are.
+        </p>
+        <a href={PIZZA_URL} className={styles.heroCta}>
+          Start Your Order
+        </a>
+      </div>
+    </section>
+
+    <div className={styles.pageContent}>
+      {/* Categories */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>What are you craving?</h2>
+        <ul className={styles.categoryGrid}>
+          {CATEGORIES.map(cat => (
+            <li key={cat.title} style={{ listStyle: "none" }}>
+              <a
+                href={PIZZA_URL}
+                className={`${styles.categoryCard} ${styles[cat.bg]}`}
+              >
+                <div className={styles.categoryImageWrapper}>
+                  <img
+                    src={cat.image}
+                    alt={cat.title}
+                    className={styles.categoryImage}
+                    loading="lazy"
+                  />
+                </div>
+                <span className={styles.categoryLabel}>{cat.title}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Promo banner */}
+      <section className={styles.section}>
+        <a
+          href={PIZZA_URL}
+          className={styles.promoBanner}
+          style={{
+            backgroundImage: `url("https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=1200&q=80")`,
+          }}
+        >
+          <div className={styles.promoContent}>
+            <p className={styles.promoTitle}>Family Meal Deal</p>
+            <p className={styles.promoSubtitle}>
+              Large pizza + 8 breadsticks + 2&#8209;liter — feeds 4
+            </p>
+            <span className={styles.promoButton}>Order now</span>
+          </div>
+        </a>
+      </section>
+
+      {/* Featured items */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>Fan favorites</h2>
+        <ul className={styles.featuredScroller}>
+          {FEATURED_ITEMS.map(item => (
+            <li key={item.id} className={styles.featuredItem}>
+              <a href={PIZZA_URL} className={styles.featuredLink}>
+                <div className={styles.featuredCard}>
+                  <div className={styles.featuredImageWrapper}>
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className={styles.featuredImage}
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className={styles.featuredBody}>
+                    <p className={styles.featuredName}>{item.name}</p>
+                    <p className={styles.featuredDesc}>{item.description}</p>
+                    <p className={styles.featuredPrice}>
+                      ${item.price.toFixed(2)}
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Footer CTA */}
+      <section className={styles.footerCta}>
+        <h2 className={styles.footerCtaHeading}>Hungry yet?</h2>
+        <p className={styles.footerCtaSub}>
+          Order online for delivery or curbside pickup.
+        </p>
+        <a href={PIZZA_URL} className={styles.footerCtaButton}>
+          Order from H&#8209;E&#8209;B
+        </a>
+      </section>
     </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
   </Layout>
 )
 

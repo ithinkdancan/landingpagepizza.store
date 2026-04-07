@@ -1,0 +1,363 @@
+/* Hero */
+.hero {
+  position: relative;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 48px 16px;
+}
+
+.heroHeading {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+  line-height: 1.1;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.heroSubheading {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0;
+  opacity: 0.9;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.heroCta {
+  display: inline-block;
+  background: #cc0000;
+  color: #fff;
+  padding: 14px 36px;
+  border-radius: 28px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  transition: background 0.2s ease;
+}
+
+.heroCta:hover {
+  background: #a30000;
+  color: #fff;
+}
+
+/* Page content */
+.pageContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Section */
+.section {
+  margin: 48px 0;
+}
+
+.sectionTitle {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0 0 24px;
+  color: #1a1a1a;
+}
+
+/* Category cards */
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.categoryCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.categoryImageWrapper {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.categoryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.categoryLabel {
+  padding: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Color variants for category cards */
+.bgCreamsicle {
+  background: #fff3e0;
+}
+.bgCottonCandy {
+  background: #fce4ec;
+}
+.bgPistachio {
+  background: #e8f5e9;
+}
+.bgFadedJeans {
+  background: #e3f2fd;
+}
+.bgLavender {
+  background: #f3e5f5;
+}
+
+/* Promo banner */
+.promoBanner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-decoration: none;
+  color: inherit;
+}
+
+.promoBanner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.65) 40%,
+    transparent 100%
+  );
+}
+
+.promoContent {
+  position: relative;
+  z-index: 1;
+  padding: 32px;
+  max-width: 50%;
+}
+
+.promoTitle {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+  margin: 0 0 8px;
+}
+
+.promoSubtitle {
+  font-size: 1rem;
+  color: #fff;
+  opacity: 0.9;
+  margin: 0 0 16px;
+}
+
+.promoButton {
+  display: inline-block;
+  background: #cc0000;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* Featured items carousel */
+.featuredScroller {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 8px;
+}
+
+.featuredScroller::-webkit-scrollbar {
+  height: 6px;
+}
+
+.featuredScroller::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.featuredScroller::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.featuredItem {
+  flex: 0 0 240px;
+  scroll-snap-align: start;
+}
+
+.featuredLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.featuredCard {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  transition: box-shadow 0.2s ease;
+}
+
+.featuredCard:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.featuredImageWrapper {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.featuredImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+
+.featuredLink:hover .featuredImage {
+  transform: scale(1.04);
+}
+
+.featuredBody {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px;
+}
+
+.featuredName {
+  font-weight: 800;
+  font-size: 1rem;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.featuredDesc {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0;
+}
+
+.featuredPrice {
+  font-weight: 800;
+  font-size: 1rem;
+  color: #cc0000;
+  margin: 0;
+}
+
+/* Footer CTA */
+.footerCta {
+  text-align: center;
+  padding: 48px 16px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  margin-bottom: 48px;
+}
+
+.footerCtaHeading {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 12px;
+}
+
+.footerCtaSub {
+  font-size: 1rem;
+  color: #666;
+  margin: 0 0 20px;
+}
+
+.footerCtaButton {
+  display: inline-block;
+  background: #cc0000;
+  color: #fff;
+  padding: 14px 36px;
+  border-radius: 28px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: background 0.2s ease;
+}
+
+.footerCtaButton:hover {
+  background: #a30000;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .heroHeading {
+    font-size: 3.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .promoContent {
+    max-width: 75%;
+  }
+
+  .promoTitle {
+    font-size: 1.2rem;
+  }
+}

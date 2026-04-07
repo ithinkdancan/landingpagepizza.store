@@ -29,15 +29,21 @@ const Layout = ({ children }) => {
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+          maxWidth: `100%`,
+          padding: 0,
         }}
       >
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <footer
+          style={{
+            textAlign: `center`,
+            padding: `1.5rem`,
+            fontSize: `0.85rem`,
+            color: `#999`,
+            fontFamily: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`,
+          }}
+        >
+          © {new Date().getFullYear()} H‑E‑B. All rights reserved.
         </footer>
       </div>
     </>
