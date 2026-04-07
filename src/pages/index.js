@@ -95,7 +95,7 @@ const IndexPage = () => (
     >
       <div className={styles.heroContent}>
         <h1 className={styles.heroHeading}>
-          Fresh&#8209;baked pizza,&nbsp;your way
+          Marketing landing page
         </h1>
         <p className={styles.heroSubheading}>
           Delivery or carryout — ready when you are.
@@ -106,91 +106,97 @@ const IndexPage = () => (
       </div>
     </section>
 
-    <div className={styles.pageContent}>
-      {/* Categories */}
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>What are you craving?</h2>
-        <ul className={styles.categoryGrid}>
-          {CATEGORIES.map(cat => (
-            <li key={cat.title} style={{ listStyle: "none" }}>
-              <a
-                href={PIZZA_URL}
-                className={`${styles.categoryCard} ${styles[cat.bg]}`}
-              >
-                <div className={styles.categoryImageWrapper}>
-                  <img
-                    src={cat.image}
-                    alt={cat.title}
-                    className={styles.categoryImage}
-                    loading="lazy"
-                  />
-                </div>
-                <span className={styles.categoryLabel}>{cat.title}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
+    <div className={styles.overlayWrapper}>
+      <div className={styles.overlay}>
+        <span className={styles.overlayLabel}>static content</span>
+      </div>
 
-      {/* Promo banner */}
-      <section className={styles.section}>
-        <a
-          href={PIZZA_URL}
-          className={styles.promoBanner}
-          style={{
-            backgroundImage: `url("https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=1200&q=80")`,
-          }}
-        >
-          <div className={styles.promoContent}>
-            <p className={styles.promoTitle}>Family Meal Deal</p>
-            <p className={styles.promoSubtitle}>
-              Large pizza + 8 breadsticks + 2&#8209;liter — feeds 4
-            </p>
-            <span className={styles.promoButton}>Order now</span>
-          </div>
-        </a>
-      </section>
-
-      {/* Featured items */}
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Fan favorites</h2>
-        <ul className={styles.featuredScroller}>
-          {FEATURED_ITEMS.map(item => (
-            <li key={item.id} className={styles.featuredItem}>
-              <a href={PIZZA_URL} className={styles.featuredLink}>
-                <div className={styles.featuredCard}>
-                  <div className={styles.featuredImageWrapper}>
+      <div className={styles.pageContent}>
+        {/* Categories */}
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>What are you craving?</h2>
+          <ul className={styles.categoryGrid}>
+            {CATEGORIES.map(cat => (
+              <li key={cat.title} style={{ listStyle: "none" }}>
+                <a
+                  href={PIZZA_URL}
+                  className={`${styles.categoryCard} ${styles[cat.bg]}`}
+                >
+                  <div className={styles.categoryImageWrapper}>
                     <img
-                      src={item.image}
-                      alt={item.name}
-                      className={styles.featuredImage}
+                      src={cat.image}
+                      alt={cat.title}
+                      className={styles.categoryImage}
                       loading="lazy"
                     />
                   </div>
-                  <div className={styles.featuredBody}>
-                    <p className={styles.featuredName}>{item.name}</p>
-                    <p className={styles.featuredDesc}>{item.description}</p>
-                    <p className={styles.featuredPrice}>
-                      ${item.price.toFixed(2)}
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
+                  <span className={styles.categoryLabel}>{cat.title}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
 
-      {/* Footer CTA */}
-      <section className={styles.footerCta}>
-        <h2 className={styles.footerCtaHeading}>Hungry yet?</h2>
-        <p className={styles.footerCtaSub}>
-          Order online for delivery or curbside pickup.
-        </p>
-        <a href={PIZZA_URL} className={styles.footerCtaButton}>
-          Order from Lone Star Slice
-        </a>
-      </section>
+        {/* Promo banner */}
+        <section className={styles.section}>
+          <a
+            href={PIZZA_URL}
+            className={styles.promoBanner}
+            style={{
+              backgroundImage: `url("https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=1200&q=80")`,
+            }}
+          >
+            <div className={styles.promoContent}>
+              <p className={styles.promoTitle}>Family Meal Deal</p>
+              <p className={styles.promoSubtitle}>
+                Large pizza + 8 breadsticks + 2&#8209;liter — feeds 4
+              </p>
+              <span className={styles.promoButton}>Order now</span>
+            </div>
+          </a>
+        </section>
+
+        {/* Featured items */}
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Fan favorites</h2>
+          <ul className={styles.featuredScroller}>
+            {FEATURED_ITEMS.map(item => (
+              <li key={item.id} className={styles.featuredItem}>
+                <a href={PIZZA_URL} className={styles.featuredLink}>
+                  <div className={styles.featuredCard}>
+                    <div className={styles.featuredImageWrapper}>
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className={styles.featuredImage}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className={styles.featuredBody}>
+                      <p className={styles.featuredName}>{item.name}</p>
+                      <p className={styles.featuredDesc}>{item.description}</p>
+                      <p className={styles.featuredPrice}>
+                        ${item.price.toFixed(2)}
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Footer CTA */}
+        <section className={styles.footerCta}>
+          <h2 className={styles.footerCtaHeading}>Hungry yet?</h2>
+          <p className={styles.footerCtaSub}>
+            Order online for delivery or curbside pickup.
+          </p>
+          <a href={PIZZA_URL} className={styles.footerCtaButton}>
+            Order from Lone Star Slice
+          </a>
+        </section>
+      </div>
     </div>
   </Layout>
 )
